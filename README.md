@@ -1,28 +1,35 @@
-# Dynamo Kotlin Template
-This repository is a template for a [Kotlin][kotlin] based project as used by the Dynamo team.
+# Measure
+Work with units of measurement.
 
-## How To Use
-This template can be used in the following way. When creating a creating a repository on GitHub one can choose to base it of a template. If you want to base your project from the `dynamo-kotlin-template`, you should choose it from the menu. It will create a repository that mimics this exact repository. For more information see [GitHub documentation][github:create-from-template].
+## Motivation
+Projects often need a way to express different quantities. For example, building software for electric grids one encounters quantities like power, energy, amperage etcetera.
 
-One should then modify the repository to reflect your project. One has to know the name of the project. We will use the place holder `project_name` in certain places.
+When one choses to represent this quantities as `BigDecimal`, one needs to be very vigilant when calculating with these quantities. It is easy to aid power and energy when they both are represented as a `BigDecimal`, even though it does not make sense on physical grounds.
 
-One can use the following checklist to make sure the all steps are done in order.
+Rather, one would represents quantities as a multiple of a [*unit of measurement*][wikipedia:unit]. This project provides exactly that.
 
-* [ ] Rename the `project` directory to `project_name`.
-* [ ] Rename `project` in `settings.gradle.kts` to `project_name`.
-* [ ] Personalize `CONTRIBUTING.md`.
-* [ ] When used, personalize `.github` directory.
-* [ ] Remove or rename the example code.
-* [ ] Describe the project in the `README`.
-* [ ] Tweak the settings of the project.
-* [ ] Remove the *How To Use* section in the `README`.
- 
+## Usage
+In using *measure* library there are two parts. The generic `Measure` and `Units` provided by the measure library, and the specific units that your project are interested in.
+
+```kotlin
+val power: Measure<Power> = 10 * kiloWatt
+val duration: Measure<Time> = 15 * minutes
+
+val energy: Measure<Energy> = power * duration
+
+assertThat(energy `as` megaJoule).equals(9 * megaJoule)
+```
+
+The code above demonstrates a fully annotated calculation with quantities. Often times the compiler can infer the corresponding types.
+
 ## Development
-This project uses [Gradle][gradle] as a build tool. To see which tasks are available run
+This project is written in [Kotlin][kotlin] and uses [Gradle][gradle] as a build tool. To see which tasks are available run
 
 ```
 ./gradlew tasks
 ```
+
+[wikipedia:unit]: https://en.wikipedia.org/wiki/Unit_of_measurement
 [github:create-from-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template
 [kotlin]: https://kotlinlang.org/
 [gradle]: https://gradle.org/

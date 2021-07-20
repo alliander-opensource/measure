@@ -8,7 +8,7 @@
  */
 
 rootProject.name = "descriptive name"
-include("project")
+include("measure")
 
 pluginManagement {
     repositories {
