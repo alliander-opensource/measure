@@ -15,10 +15,13 @@ plugins {
 
     // Apply dokka plugin to allow extraction of ducumentation from KDoc comments
     id("org.jetbrains.dokka") version "1.4.20"
+
+    // Make sure we can publish to maven
+    `maven-publish`
 }
 
 group = "com.alliander"
-version = "1.0-SNAPSHOT"
+version = "1.1"
 
 repositories {
     // Use JCenter for resolving dependencies.
@@ -49,4 +52,23 @@ tasks.withType<Test> {
 
 tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
     outputDirectory.set(buildDir.resolve("dokka"))
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["kotlin"])
+        }
+    }
+
+    repositories {
+        maven {
+            name = "AllianderNexus"
+            url = uri("https://nexus.apps.ocp-01.prd.ahcaws.com/repository/maven-releases/")
+            credentials {
+                username = System.getenv("ALLIANDER_NEXUS_USERNAME")
+                password = System.getenv("ALLIANDER_NEXUS_PASSWORD")
+            }
+        }
+    }
 }
