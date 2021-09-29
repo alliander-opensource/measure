@@ -7,7 +7,7 @@
  * in the user manual at https://docs.gradle.org/6.7.1/userguide/multi_project_builds.html
  */
 
-rootProject.name = "descriptive name"
+rootProject.name = "Measure"
 include("measure")
 
 pluginManagement {
