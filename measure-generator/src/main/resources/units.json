@@ -29,6 +29,16 @@
           "ratio": "1"
         },
         {
+          "name": "kiloJoule",
+          "suffix": "kJ",
+          "ratio": "1000"
+        },
+        {
+          "name": "megaJoule",
+          "suffix": "mJ",
+          "ratio": "1000000"
+        },
+        {
           "name": "wattHour",
           "suffix": "Wh",
           "ratio": "3600"

@@ -86,14 +86,3 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
         return "$amount$units"
     }
 }
-#foreach( $quantity in $system.quantities )
-
-class ${quantity.name}(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
-    companion object {
-#foreach( $conversion in $quantity.conversions )
-        val $conversion.name = ${quantity.name}("$conversion.suffix", "${conversion.ratio}".toBigDecimal())
-#end
-    }
-}
-#end
-

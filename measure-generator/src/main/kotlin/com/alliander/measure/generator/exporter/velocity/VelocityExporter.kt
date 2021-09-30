@@ -16,7 +16,7 @@ data class VelocityExporter(private val configuration: Configuration, private va
         properties.setProperty("file.resource.loader.path", configuration.templatePath)
         val engine = VelocityEngine()
         engine.init(properties)
-        template = engine.getTemplate("system.vtl")
+        template = engine.getTemplate("specific.vtl")
     }
 
     override fun export(system: System) {
