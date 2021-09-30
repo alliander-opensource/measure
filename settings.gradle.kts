@@ -9,6 +9,7 @@
 
 rootProject.name = "Measure"
 include("measure")
+include("measure-generator")
 
 pluginManagement {
     repositories {

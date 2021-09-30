@@ -1,0 +1,74 @@
+{
+  "quantities": [
+    {
+      "name": "Power",
+      "conversions": [
+        {
+          "name": "watt",
+          "suffix": "W",
+          "ratio": "1"
+        },
+        {
+          "name": "kiloWatt",
+          "suffix": "kW",
+          "ratio": "1000"
+        },
+        {
+          "name": "megaWatt",
+          "suffix": "MW",
+          "ratio": "1000000"
+        }
+      ]
+    },
+    {
+      "name": "Energy",
+      "conversions": [
+        {
+          "name": "joule",
+          "suffix": "J",
+          "ratio": "1"
+        },
+        {
+          "name": "wattHour",
+          "suffix": "Wh",
+          "ratio": "3600"
+        },
+        {
+          "name": "kiloWattHour",
+          "suffix": "kWh",
+          "ratio": "3600000"
+        }
+      ]
+    },
+    {
+      "name": "Time",
+      "conversions": [
+        {
+          "name": "second",
+          "suffix": "s",
+          "ratio": "1"
+        },
+        {
+          "name": "minute",
+          "suffix": "min",
+          "ratio": "60"
+        },
+        {
+          "name": "hour",
+          "suffix": "h",
+          "ratio": "3600"
+        },
+        {
+          "name": "day",
+          "suffix": "d",
+          "ratio": "86400"
+        },
+        {
+          "name": "week",
+          "suffix": "w",
+          "ratio": "604800"
+        }
+      ]
+    }
+  ]
+}

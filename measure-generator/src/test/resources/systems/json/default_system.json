@@ -1,0 +1,24 @@
+{
+  "quantities": [
+    {
+      "name": "Power",
+      "conversions": [
+        {
+          "name": "watt",
+          "suffix": "W",
+          "ratio": "1"
+        },
+        {
+          "name": "kiloWatt",
+          "suffix": "kW",
+          "ratio": "1000"
+        },
+        {
+          "name": "megaWatt",
+          "suffix": "MW",
+          "ratio": "1000000"
+        }
+      ]
+    }
+  ]
+}
