@@ -1,12 +1,34 @@
 package com.alliander.test
 
 import java.math.BigDecimal
+import com.alliander.test.Power.Companion.watt
+import com.alliander.test.Time.Companion.second
+import com.alliander.test.Energy.Companion.joule
+
+operator fun Measure<Power>.times(that: Measure<Time>): Measure<Energy> {
+    val left = this `as` watt
+    val right = that `as` second
+
+    return Measure(left.amount * right.amount, joule)
+}
 
 class Power(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
     companion object {
         val watt = Power("W", "1".toBigDecimal())
         val kiloWatt = Power("kW", "1000".toBigDecimal())
         val megaWatt = Power("MW", "1000000".toBigDecimal())
+    }
+}
+
+class Time(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
+    companion object {
+        val second = Time("s", "1".toBigDecimal())
+    }
+}
+
+class Energy(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
+    companion object {
+        val joule = Energy("J", "1".toBigDecimal())
     }
 }
 

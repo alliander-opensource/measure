@@ -1,6 +1,7 @@
 package com.alliander.measure.generator
 
 import io.kotest.core.spec.style.StringSpec
+import io.kotest.matchers.shouldBe
 import java.math.BigDecimal
 
 class SystemTest : StringSpec({
@@ -16,5 +17,28 @@ class SystemTest : StringSpec({
                 )
             )
         )
+    }
+
+    "systems can determine multiplication imports" {
+        val system = System(
+            listOf(
+                Quantity(
+                    "Energy", listOf(
+                        UnitsDescription("joule", "J", BigDecimal.ONE),
+                        UnitsDescription("kiloJoule", "kJ", "1000".toBigDecimal()),
+                        UnitsDescription("megaJoule", "MJ", "1000".toBigDecimal()),
+                    )
+                )
+            ),
+            listOf(
+                Multiplication(
+                    Multiplicant("Power", "watt"),
+                    Multiplicant("Time", "second"),
+                    Multiplicant("Energy", "joule"),
+                )
+            )
+        )
+
+        system.imports() shouldBe listOf(Import("Power", "watt"), Import("Time", "second"), Import("Energy", "joule"))
     }
 })

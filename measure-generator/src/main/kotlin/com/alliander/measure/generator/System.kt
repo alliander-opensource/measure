@@ -10,15 +10,24 @@ import kotlinx.serialization.encoding.Encoder
 import java.math.BigDecimal
 
 @Serializable
-data class System(val quantities: Collection<Quantity>)
+data class System(val quantities: Collection<Quantity>, val multiplications: Collection<Multiplication> = emptyList()) {
+    fun imports(): Collection<Import> =
+        multiplications
+            .toSet()
+            .flatMap { m -> setOf(m.left, m.right, m.to) }
+            .map(Multiplicant::toImport)
+
+}
 
 @Serializable
 data class Quantity(val name: String, val conversions: Collection<UnitsDescription>)
 
 @Serializable
-data class UnitsDescription(val name: String, val suffix: String,
-                            @Serializable(with=BigDecimalAsStringSerializer::class)
-                            val ratio: BigDecimal)
+data class UnitsDescription(
+    val name: String, val suffix: String,
+    @Serializable(with = BigDecimalAsStringSerializer::class)
+    val ratio: BigDecimal
+)
 
 object BigDecimalAsStringSerializer : KSerializer<BigDecimal> {
     override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("BigDecimal", PrimitiveKind.STRING)
@@ -28,8 +37,18 @@ object BigDecimalAsStringSerializer : KSerializer<BigDecimal> {
         return BigDecimal(input)
     }
 
-   override fun serialize(encoder: Encoder, value: BigDecimal) {
+    override fun serialize(encoder: Encoder, value: BigDecimal) {
         encoder.encodeString(value.toPlainString())
     }
-
 }
+
+@Serializable
+data class Multiplication(val left: Multiplicant, val right: Multiplicant, val to: Multiplicant)
+
+@Serializable
+data class Multiplicant(val unit: String, val base: String) {
+    fun toImport(): Import =
+        Import(unit, base)
+}
+
+data class Import(val unit: String, val base: String)

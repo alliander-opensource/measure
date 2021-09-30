@@ -1,6 +1,18 @@
 package ${configuration.packageName}
 
 import java.math.BigDecimal
+#foreach( $import in $system.imports() )
+import ${configuration.packageName}.${import.unit}.Companion.${import.base}
+#end
+#foreach( $multiplication in $system.multiplications )
+
+operator fun Measure<$multiplication.left.unit>.times(that: Measure<$multiplication.right.unit>): Measure<$multiplication.to.unit> {
+    val left = this `as` $multiplication.left.base
+    val right = that `as` $multiplication.right.base
+
+    return Measure(left.amount * right.amount, $multiplication.to.base)
+}
+#end
 #foreach( $quantity in $system.quantities )
 
 class ${quantity.name}(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {

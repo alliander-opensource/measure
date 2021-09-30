@@ -19,6 +19,42 @@
           "ratio": "1000000"
         }
       ]
+    },
+    {
+      "name": "Time",
+      "conversions": [
+        {
+          "name": "second",
+          "suffix": "s",
+          "ratio": "1"
+        }
+      ]
+    },
+    {
+      "name": "Energy",
+      "conversions": [
+        {
+          "name": "joule",
+          "suffix": "J",
+          "ratio": "1"
+        }
+      ]
+    }
+  ],
+  "multiplications": [
+    {
+      "left": {
+        "unit": "Power",
+        "base": "watt"
+      },
+      "right": {
+        "unit": "Time",
+        "base": "second"
+      },
+      "to": {
+        "unit": "Energy",
+        "base": "joule"
+      }
     }
   ]
 }

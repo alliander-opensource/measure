@@ -10,6 +10,19 @@ val system = System(
                 UnitsDescription("kiloWatt", "kW", 1_000.toBigDecimal()),
                 UnitsDescription("megaWatt", "MW", 1_000_000.toBigDecimal()),
             )
+        ),
+        Quantity(
+            "Time", listOf(
+                UnitsDescription("second", "s", BigDecimal.ONE)
+            )
+        ),
+        Quantity(
+            "Energy", listOf(
+                UnitsDescription("joule", "J", BigDecimal.ONE)
+            )
         )
+    ),
+    listOf(
+        Multiplication(Multiplicant("Power", "watt"), Multiplicant("Time", "second"), Multiplicant("Energy", "joule"))
     )
 )
