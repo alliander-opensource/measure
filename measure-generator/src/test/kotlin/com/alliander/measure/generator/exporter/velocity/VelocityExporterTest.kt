@@ -23,7 +23,7 @@ class VelocityExporterTest : StringSpec() {
                 packageName = "com.alliander.test",
                 templatePath = "src/main/resources/templates"
             ), writer)
-            val expected = File("src/test/resources/expectations/SpecificUnits.kt").readText()
+            val expected = File("src/test/resources/expectations/SpecificUnits.expectation").readText()
 
             exporter.export(system)
 
