@@ -2,6 +2,7 @@ package com.alliander.measure
 
 import com.alliander.measure.Energy.Companion.joule
 import com.alliander.measure.Energy.Companion.kiloJoule
+import com.alliander.measure.Energy.Companion.kiloWattHour
 import com.alliander.measure.Energy.Companion.megaJoule
 import com.alliander.measure.Power.Companion.kiloWatt
 import com.alliander.measure.Power.Companion.watt
@@ -11,6 +12,7 @@ import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.property.checkAll
+import java.math.BigDecimal
 
 class MeasureTest : StringSpec({
     "Joule, Watt and seconds are different units" {
@@ -52,5 +54,14 @@ class MeasureTest : StringSpec({
             val expectedQuantity = (leftQuantity.toLong()) + (rightQuantity.toLong())
             sum shouldBe expectedQuantity * joule
         }
+    }
+
+    "support decimals" {
+        val value = 3905.07
+
+        val result = value * kiloWattHour
+
+        val expectedResult = Measure(BigDecimal.valueOf(value), kiloWattHour)
+        result shouldBe expectedResult
     }
 })

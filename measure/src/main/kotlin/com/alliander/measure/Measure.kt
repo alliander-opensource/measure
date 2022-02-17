@@ -5,6 +5,8 @@ import java.math.RoundingMode
 
 operator fun <U : Units> Int.times(units: U): Measure<U> = Measure(this.toBigDecimal(), units)
 operator fun <U : Units> Long.times(units: U): Measure<U> = Measure(this.toBigDecimal(), units)
+operator fun <U : Units> Double.times(units: U): Measure<U> = Measure(this.toBigDecimal(), units)
+operator fun <U : Units> Float.times(units: U): Measure<U> = Measure(this.toBigDecimal(), units)
 operator fun <U : Units> BigDecimal.times(units: U): Measure<U> = Measure(this, units)
 
 open class Units(val suffix: String, val ratio: BigDecimal = BigDecimal.ONE) {
