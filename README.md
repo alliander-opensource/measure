@@ -1,4 +1,6 @@
 # Measure
+[![InnerSource status](https://innersource.cf.alliander.com/api/badge/@Alliander/measure)](https://innersource.cf.alliander.com)
+
 Work with units of measurement.
 
 ## Motivation
