@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: measure
+  annotations:
+    github.com/project-slug: Alliander/measure
+    alliander.com/product-owner: daan.vanberkel@alliander.com
+    alliander.com/production-branch: master
+spec:
+  type: library
+  lifecycle: production
