@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2022 Contributors to the Measure project
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Contributing to Project
 We'd love to accept your patches and contributions to this project. There are just a few small guidelines you need to follow.
 
