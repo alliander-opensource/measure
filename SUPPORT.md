@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2022 Contributors to the Measure project
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Getting Help
 
 There are a few ways to connect with the `measure` project:
