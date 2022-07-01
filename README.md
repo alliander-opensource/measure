@@ -1,5 +1,10 @@
+<!--
+SPDX-FileCopyrightText: 2022 Contributors to the Measure project
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Measure
-[![InnerSource status](https://innersource.cf.alliander.com/api/badge/@Alliander/measure)](https://innersource.cf.alliander.com)
 
 Work with units of measurement.
 
@@ -35,3 +40,10 @@ This project is written in [Kotlin][kotlin] and uses [Gradle][gradle] as a build
 [github:create-from-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template
 [kotlin]: https://kotlinlang.org/
 [gradle]: https://gradle.org/
+
+# Contributing
+Please read [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [CONTRIBUTING](CONTRIBUTING.md) for details on the process 
+for submitting pull requests to us.
+
+# Contact
+Please read [SUPPORT](SUPPORT.md) for how to connect and get into contact with the Measure project.
