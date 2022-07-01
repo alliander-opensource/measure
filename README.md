@@ -6,7 +6,7 @@ SPDX-License-Identifier: MPL-2.0
 
 # Measure
 
-Work with units of measurement.
+`measure` is a Kotlin library for working with units of measurement that are ofter used in the power system sector.
 
 ## Motivation
 Projects often need a way to express different quantities. For example, building software for electric grids one encounters quantities like power, energy, amperage etcetera.
