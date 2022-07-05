@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 ---
 name: Bug report
 about: Create a report to help us improve

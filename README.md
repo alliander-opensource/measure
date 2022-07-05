@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Measure
 [![InnerSource status](https://innersource.cf.alliander.com/api/badge/@Alliander/measure)](https://innersource.cf.alliander.com)
 

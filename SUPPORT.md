@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Getting Help
 
 There are a few ways to connect with the `measure` project:
