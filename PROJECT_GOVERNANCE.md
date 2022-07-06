@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Project Governance
 
 The basic principle is that decisions are based on consensus. If this decision making process takes too long or a decision is required, the project committee has the authority to make a decision.
