@@ -36,11 +36,6 @@ This project is written in [Kotlin][kotlin] and uses [Gradle][gradle] as a build
 ./gradlew tasks
 ```
 
-[wikipedia:unit]: https://en.wikipedia.org/wiki/Unit_of_measurement
-[github:create-from-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template
-[kotlin]: https://kotlinlang.org/
-[gradle]: https://gradle.org/
-
 # License
 This project is licensed under the Mozilla Public License, version 2.0 - see [LICENSE](LICENSE) for details.
 
@@ -56,3 +51,8 @@ for submitting pull requests to us.
 
 # Contact
 Please read [SUPPORT](SUPPORT.md) for how to connect and get into contact with the Measure project.
+
+[wikipedia:unit]: https://en.wikipedia.org/wiki/Unit_of_measurement
+[github:create-from-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template
+[kotlin]: https://kotlinlang.org/
+[gradle]: https://gradle.org/
