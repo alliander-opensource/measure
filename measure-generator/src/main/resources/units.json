@@ -35,7 +35,7 @@
         },
         {
           "name": "megaJoule",
-          "suffix": "mJ",
+          "suffix": "MJ",
           "ratio": "1000000"
         },
         {
@@ -60,7 +60,7 @@
         },
         {
           "name": "minute",
-          "suffix": "min",
+          "suffix": "m",
           "ratio": "60"
         },
         {
@@ -79,6 +79,22 @@
           "ratio": "604800"
         }
       ]
+    }
+  ],
+  "multiplications": [
+    {
+      "left": {
+        "unit": "Power",
+        "base": "watt"
+      },
+      "right": {
+        "unit": "Time",
+        "base": "second"
+      },
+      "to": {
+        "unit": "Energy",
+        "base": "joule"
+      }
     }
   ]
 }

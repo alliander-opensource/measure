@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure
+package com.alliander.open.measure
 
-import com.alliander.measure.Energy.Companion.joule
-import com.alliander.measure.Power.Companion.watt
-import com.alliander.measure.Time.Companion.seconds
+import com.alliander.open.measure.Energy.Companion.joule
+import com.alliander.open.measure.Power.Companion.watt
+import com.alliander.open.measure.Time.Companion.seconds
 import java.math.BigDecimal
 
 operator fun Measure<Power>.times(duration: Measure<Time>): Measure<Energy> {
@@ -40,3 +40,4 @@ class Time(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, r
         val hours = Time("h", 3_600.toBigDecimal())
     }
 }
+

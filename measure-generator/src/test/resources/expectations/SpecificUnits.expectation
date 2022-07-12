@@ -1,9 +1,9 @@
-package com.alliander.test
+package com.alliander.open.test
 
 import java.math.BigDecimal
-import com.alliander.test.Power.Companion.watt
-import com.alliander.test.Time.Companion.second
-import com.alliander.test.Energy.Companion.joule
+import com.alliander.open.test.Power.Companion.watt
+import com.alliander.open.test.Time.Companion.second
+import com.alliander.open.test.Energy.Companion.joule
 
 operator fun Measure<Power>.times(that: Measure<Time>): Measure<Energy> {
     val left = this `as` watt

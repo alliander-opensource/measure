@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator
+package com.alliander.open.measure.generator
 
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe

@@ -2,10 +2,10 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator.exporter.velocity
+package com.alliander.open.measure.generator.exporter.velocity
 
-import com.alliander.measure.generator.exporter.Exporter
-import com.alliander.measure.generator.system
+import com.alliander.open.measure.generator.exporter.Exporter
+import com.alliander.open.measure.generator.system
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.core.test.TestCase
 import io.kotest.matchers.shouldBe
@@ -24,7 +24,7 @@ class VelocityExporterTest : StringSpec() {
     init {
         "systems are correctly exported" {
             val exporter: Exporter = VelocityExporter(Configuration(
-                packageName = "com.alliander.test",
+                packageName = "com.alliander.open.test",
                 templatePath = "src/main/resources/templates"
             ), writer)
             val expected = File("src/test/resources/expectations/SpecificUnits.expectation").readText()

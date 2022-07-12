@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator
+package com.alliander.open.measure.generator
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable

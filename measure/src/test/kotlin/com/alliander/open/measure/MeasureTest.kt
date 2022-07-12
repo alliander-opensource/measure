@@ -2,16 +2,16 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure
+package com.alliander.open.measure
 
-import com.alliander.measure.Energy.Companion.joule
-import com.alliander.measure.Energy.Companion.kiloJoule
-import com.alliander.measure.Energy.Companion.kiloWattHour
-import com.alliander.measure.Energy.Companion.megaJoule
-import com.alliander.measure.Power.Companion.kiloWatt
-import com.alliander.measure.Power.Companion.watt
-import com.alliander.measure.Time.Companion.minutes
-import com.alliander.measure.Time.Companion.seconds
+import com.alliander.open.measure.Energy.Companion.joule
+import com.alliander.open.measure.Energy.Companion.kiloJoule
+import com.alliander.open.measure.Energy.Companion.kiloWattHour
+import com.alliander.open.measure.Energy.Companion.megaJoule
+import com.alliander.open.measure.Power.Companion.kiloWatt
+import com.alliander.open.measure.Power.Companion.watt
+import com.alliander.open.measure.Time.Companion.minutes
+import com.alliander.open.measure.Time.Companion.seconds
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe

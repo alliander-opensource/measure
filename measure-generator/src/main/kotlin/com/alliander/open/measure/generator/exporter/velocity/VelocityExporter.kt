@@ -2,10 +2,10 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator.exporter.velocity
+package com.alliander.open.measure.generator.exporter.velocity
 
-import com.alliander.measure.generator.System
-import com.alliander.measure.generator.exporter.Exporter
+import com.alliander.open.measure.generator.System
+import com.alliander.open.measure.generator.exporter.Exporter
 import org.apache.velocity.Template
 import org.apache.velocity.VelocityContext
 import org.apache.velocity.app.VelocityEngine

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure
+package com.alliander.open.measure
 
 import java.math.BigDecimal
 import java.math.RoundingMode

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator.exporter.velocity
+package com.alliander.open.measure.generator.exporter.velocity
 
 import io.kotest.core.spec.Spec
 import io.kotest.core.spec.style.StringSpec

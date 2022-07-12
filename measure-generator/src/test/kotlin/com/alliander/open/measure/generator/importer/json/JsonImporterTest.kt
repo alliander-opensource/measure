@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.measure.generator.importer.json
+package com.alliander.open.measure.generator.importer.json
 
-import com.alliander.measure.generator.system
+import com.alliander.open.measure.generator.system
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 import java.io.FileInputStream
