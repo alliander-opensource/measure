@@ -14,8 +14,7 @@ operator fun Measure<Power>.times(duration: Measure<Time>): Measure<Energy> {
     val dt = duration `as` seconds
 
     return Measure(p.amount * dt.amount, joule)
-}
-
+}//even proberen te pushen
 class Power(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
     companion object {
         val watt = Power("W")
