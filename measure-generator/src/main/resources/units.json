@@ -47,6 +47,11 @@
           "name": "kiloWattHour",
           "suffix": "kWh",
           "ratio": "3600000"
+        },
+        {
+          "name": "megaWattHour",
+          "suffix": "mWh",
+          "ratio": "3600000000"
         }
       ]
     },
