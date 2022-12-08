@@ -61,6 +61,7 @@ tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
 publishing {
     publications {
         create<MavenPublication>("maven") {
+            artifactId = "open.measure"
             from(components["kotlin"])
         }
     }
