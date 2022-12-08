@@ -11,7 +11,7 @@ SPDX-License-Identifier: MPL-2.0
 ## Motivation
 Projects often need a way to express different quantities. For example, building software for electric grids one encounters quantities like power, energy, amperage etcetera.
 
-When one choses to represent this quantities as `BigDecimal`, one needs to be very vigilant when calculating with these quantities. It is easy to aid power and energy when they both are represented as a `BigDecimal`, even though it does not make sense on physical grounds.
+When one choses to represent this quantities as `BigDecimal`, one needs to be very vigilant when calculating with these quantities. It is easy to add power and energy when they both are represented as a `BigDecimal`, even though it does not make sense on physical grounds.
 
 Rather, one would represents quantities as a multiple of a [*unit of measurement*][wikipedia:unit]. This project provides exactly that.
 
