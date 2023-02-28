@@ -39,7 +39,7 @@ operator fun <A : Units, B : A> A.compareTo(other: B): Int = this.ratio.compareT
 fun <A : Units, B : A> baseUnits(first: A, second: B): A = if (first < second) first else second
 
 data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable<Measure<U>> {
-    infix fun <A : U> `as`(other: A): Measure<out U> = if (units == other) this else Measure(this `in` other, other)
+    infix fun <A : U> `as`(other: A): Measure<U> = if (units == other) this else Measure(this `in` other, other)
     infix fun <A : U> `in`(other: A): BigDecimal =
         if (units == other)
             amount
@@ -89,4 +89,32 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
     override fun toString(): String {
         return "$amount$units"
     }
+
+    fun isZero(): Boolean = this.amount.signum() == 0
+
+    fun isNegative(): Boolean = this.amount < BigDecimal.ZERO
+
+    /**
+     * Rounds this [Measure] (dividend) to the next multiple of the specified [Measure] (factor).
+     * Given the rounding Mode is UP; The rounding type is 'round-away-from-zero',
+     * meaning that 10.1 rounded to a factor 1 is 11, and -10.1 rounded to a factor 1 is -11.
+     * Given the rounding Mode is DOWN; The rounding type is 'round-towards-zero',
+     * meaning that 10.1 rounded to a factor 1 is 10, and -10.1 rounded to a factor 1 is -10.
+     * - In case the dividend or the factor is zero, the dividend is returned as is.
+     * - In case the factor is negative, it is assessed as if it were positive.
+     */
+
+    fun roundToMultiple(factor: Measure<U>, roundingMode: RoundingMode): Measure<U> {
+        if (this.isZero() || factor.isZero()) {
+            return this
+        }
+        val base = baseUnits(this.units, factor.units)
+        val dividend = this `in` base
+        val absoluteFactor = (factor `in` base).abs()
+        return dividend.roundToMultiple(absoluteFactor, roundingMode) * base
+    }
+
 }
+
+private fun BigDecimal.roundToMultiple(factor: BigDecimal, roundingMode: RoundingMode): BigDecimal =
+        this.divide(factor, 0, roundingMode) * factor
