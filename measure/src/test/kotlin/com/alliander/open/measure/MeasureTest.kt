@@ -94,32 +94,32 @@ class MeasureTest : StringSpec({
         result shouldBe expectedResult
     }
 
-    "isNegative returns true when value is less than zero" {
-        val amount = -12
-        val value = amount * minutes
-        val result = value.isNegative()
-
-        val expectedResult = true
-        result shouldBe expectedResult
+    "isNegative works correctly" {
+        io.kotest.data.forAll(
+                table(
+                    headers("value", "expectedResult"),
+                    row(-12 * minutes, true),
+                    row(0000.0000700 * megaJoule, false),
+                    row(0000.0000 * kiloWatt, false),
+                    row(100.2 * seconds, false),
+                )
+        ) { value: Measure<Units>, expectedResult: Boolean ->
+            value.isNegative() shouldBe expectedResult
+        }
     }
 
-    "isNegative returns false when value is greater than zero" {
-        val amount = 0000.0000700
-        val value = amount * megaJoule
-        val result = value.isNegative()
-
-        val expectedResult = false
-        result shouldBe expectedResult
-    }
-
-    "isNegative returns false when value is equal to zero" {
-        val amount = 0000.0000
-        val value = amount * kiloWatt
-        val result = value.isNegative()
-
-
-        val expectedResult = false
-        result shouldBe expectedResult
+    "isPositive works correctly" {
+        io.kotest.data.forAll(
+                table(
+                    headers("amount", "expectedResult"),
+                    row(100.1 * seconds, true),
+                    row(-10.1 * joule, false),
+                    row(0 * hours, false),
+                    row(100.2 * megaWatt, true),
+                )
+        ) { amount: Measure<Units>, expectedResult: Boolean ->
+            amount.isPositive() shouldBe expectedResult
+        }
     }
 
     "powerSum returns 0 watt when given an empty list" {
