@@ -90,9 +90,13 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
         return "$amount$units"
     }
 
-    fun isZero(): Boolean = this.amount.signum() == 0
+    fun sign(): Int = this.amount.signum()
 
-    fun isNegative(): Boolean = this.amount < BigDecimal.ZERO
+    fun isZero(): Boolean = this.sign() == 0
+
+    fun isNegative(): Boolean = this.sign() == -1
+
+    fun isPositive(): Boolean = this.sign() == 1
 
     /**
      * Rounds this [Measure] (dividend) to the next multiple of the specified [Measure] (factor).
