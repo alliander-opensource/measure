@@ -60,6 +60,34 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
     fun abs(): Measure<U> =
         Measure(amount.abs(), units)
 
+    fun sign(): Int = this.amount.signum()
+
+    fun isZero(): Boolean = this.sign() == 0
+
+    fun isNegative(): Boolean = this.sign() == -1
+
+    fun isPositive(): Boolean = this.sign() == 1
+
+    /**
+     * Rounds this [Measure] (dividend) to the next multiple of the specified [Measure] (factor).
+     * Given the rounding Mode is UP; The rounding type is 'round-away-from-zero',
+     * meaning that 10.1 rounded to a factor 1 is 11, and -10.1 rounded to a factor 1 is -11.
+     * Given the rounding Mode is DOWN; The rounding type is 'round-towards-zero',
+     * meaning that 10.1 rounded to a factor 1 is 10, and -10.1 rounded to a factor 1 is -10.
+     * - In case the dividend or the factor is zero, the dividend is returned as is.
+     * - In case the factor is negative, it is assessed as if it were positive.
+     */
+
+    fun roundToMultiple(factor: Measure<U>, roundingMode: RoundingMode): Measure<U> {
+        if (this.isZero() || factor.isZero()) {
+            return this
+        }
+        val base = baseUnits(this.units, factor.units)
+        val dividend = this `in` base
+        val absoluteFactor = (factor `in` base).abs()
+        return dividend.roundToMultiple(absoluteFactor, roundingMode) * base
+    }
+
     override fun compareTo(other: Measure<U>): Int =
         amount.compareTo((other `as` units).amount)
 
