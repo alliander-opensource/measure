@@ -2,7 +2,11 @@
 //
 // SPDX-License-Identifier: MPL-2.0
 
-package com.alliander.open.measure
+package com.alliander.open.measure.extension
+
+import com.alliander.open.measure.Measure
+import com.alliander.open.measure.Power
+import com.alliander.open.measure.times
 
 val ZERO_POWER = 0 * Power.watt
 
