@@ -36,6 +36,13 @@ This project is written in [Kotlin][kotlin] and uses [Gradle][gradle] as a build
 ./gradlew tasks
 ```
 
+### Model
+The code found in the `measure` module is generated from a model. The model is a [`System`](https://github.com/alliander-opensource/measure/blob/master/measure-generator/src/main/kotlin/com/alliander/open/measure/generator/System.kt) which describes units and their multiplications. An [application](https://github.com/alliander-opensource/measure/blob/master/measure-generator/src/main/kotlin/com/alliander/open/measure/generator/App.kt) can read a representation of a system and output the source.
+
+If one wants to add a specific unit one can add it to the [units](https://github.com/alliander-opensource/measure/blob/master/measure-generator/src/main/resources/units.json) as found in the resources of the `measure-generator` module.
+
+If the functionality of `Measure` should change one should make the intended changes in the [`measure.vtl`](https://github.com/alliander-opensource/measure/blob/master/measure-generator/src/main/resources/templates/measure.vtl) template or its companion [`specific.vtl`](https://github.com/alliander-opensource/measure/tree/master/measure-generator/src/main/resources/templates) that describes how specific units like *power*, *energy* or *time*.
+
 # License
 This project is licensed under the Mozilla Public License, version 2.0 - see [LICENSE](LICENSE) for details.
 
