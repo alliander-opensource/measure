@@ -117,8 +117,16 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
         val absoluteFactor = (factor `in` base).abs()
         return dividend.roundToMultiple(absoluteFactor, roundingMode) * base
     }
-
 }
 
 private fun BigDecimal.roundToMultiple(factor: BigDecimal, roundingMode: RoundingMode): BigDecimal =
-        this.divide(factor, 0, roundingMode) * factor
+    this.divide(factor, 0, roundingMode) * factor
+
+operator fun <U : Units> BigDecimal.times(m: Measure<U>): Measure<U> =
+    Measure(amount = m.amount.times(this), units = m.units)
+
+operator fun <U : Units> Int.times(m: Measure<U>): Measure<U> =
+    BigDecimal.valueOf(this.toLong()) * m
+
+operator fun <U : Units> Long.times(m: Measure<U>): Measure<U> =
+    BigDecimal.valueOf(this) * m
