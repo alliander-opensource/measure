@@ -49,7 +49,7 @@ java {
 
 // This task is added by Gradle when we use java.withJavadocJar()
 val javadocJar = tasks.named<Jar>("javadocJar") {
-    from(tasks.named("dokkaJavadoc"))
+    from(tasks.named<DokkaTask>("dokkaHtml"))
 }
 
 tasks.withType<Test> {
