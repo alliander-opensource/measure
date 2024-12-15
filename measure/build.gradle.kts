@@ -13,7 +13,7 @@ plugins {
     `java-library`
 
     // Apply dokka plugin to allow extraction of ducumentation from KDoc comments
-    id("org.jetbrains.dokka") version "1.4.20"
+    id("org.jetbrains.dokka") version "1.9.20"
 
     id("com.vanniktech.maven.publish") version "0.30.0"
 }
