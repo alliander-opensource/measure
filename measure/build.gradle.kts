@@ -64,7 +64,6 @@ mavenPublishing {
     // Publishing to https://s01.oss.sonatype.org
     publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
-    coordinates("com.alliander", "measure", "1.3.0-SNAPSHOT")
 
     pom {
         name.set("Measure")
