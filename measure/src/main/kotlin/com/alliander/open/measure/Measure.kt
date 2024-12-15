@@ -13,6 +13,10 @@ operator fun <U : Units> Double.times(units: U): Measure<U> = Measure(this.toBig
 operator fun <U : Units> Float.times(units: U): Measure<U> = Measure(this.toBigDecimal(), units)
 operator fun <U : Units> BigDecimal.times(units: U): Measure<U> = Measure(this, units)
 
+/**
+ * [Units] is the base class for a Unit, e.g. [Power] or [Current]. The reason for calling it "Units" is that "Unit"
+ * was taken in Kotlin.
+ */
 open class Units(val suffix: String, val ratio: BigDecimal = BigDecimal.ONE) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -107,7 +111,6 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
      * - In case the dividend or the factor is zero, the dividend is returned as is.
      * - In case the factor is negative, it is assessed as if it were positive.
      */
-
     fun roundToMultiple(factor: Measure<U>, roundingMode: RoundingMode): Measure<U> {
         if (this.isZero() || factor.isZero()) {
             return this
