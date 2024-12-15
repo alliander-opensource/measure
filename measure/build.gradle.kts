@@ -62,7 +62,7 @@ tasks.withType<DokkaTask>().configureEach {
 
 mavenPublishing {
     // Publishing to https://s01.oss.sonatype.org
-    publishToMavenCentral(SonatypeHost.S01)
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     signAllPublications()
     coordinates("com.alliander", "measure", "1.3.0-SNAPSHOT")
 
