@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+
+SPDX-License-Identifier: MPL-2.0
+-->
+
 # Releasing procedure
 
 After adding new features or bugfixes you might want to release the changes so that they can be used. To do this, we
