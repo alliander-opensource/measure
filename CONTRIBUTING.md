@@ -13,9 +13,9 @@ Contribution does not necessarily mean committing code to the repository.
 We recognize different levels of contributions as shown below in increasing order of dedication:
 
 1. Test and use the libray. Give feedback on the user experience or suggest new features.
-3. Report bugs.
-4. Improve the documentation
-5. Contributing to the Kotlin code
+2. Report bugs.
+3. Improve the documentation
+4. Contributing to the Kotlin code
 
 ## Community Guidelines
 This project follows the following [Code of Conduct][code-of-conduct].
@@ -28,10 +28,10 @@ Documentation is a very important part of a project. If people don't know how to
 
 Contribute to the documentation on the [documentation page][project:documentation].
 
-[code-of-conduct]: https://github.com/Alliander/project/blob/master/CODE_OF_CONDUCT.md
-[project:issues]: https://github.com/Alliander/project/issues
-[project:discussion]: https://github.com/Alliander/project/discussions
-[project:documentation]: https://github.com/Alliander/project/wiki
+[code-of-conduct]: https://github.com/alliander-opensource/measure/blob/main/CODE_OF_CONDUCT.md
+[project:issues]: https://github.com/alliander-opensource/project/issues
+[project:discussion]: https://github.com/alliander-opensource/project/discussions
+[project:documentation]: https://github.com/alliander-opensource/project/wiki
 
 ## Signing the Developer Certificate of Origin (DCO)
 
@@ -72,6 +72,7 @@ The process for a code change and pull request you should follow:
 "feature-###" or "fix-###". For more information see the Git branching guideline.
 1. Make changes, compile, and test thoroughly. Ensure any install or build dependencies are removed before the end of the layer when doing a build. Code style should match existing style and conventions, and changes should be focused on the topic the pull request will be addressed. For more information see the style guide.
 1. Push commits to your fork.
+1. Update the CHANGELOG.md with the changes.
 1. Create a Github pull request from your topic branch.
 1. Pull requests will be reviewed by one of the maintainers who may discuss, offer constructive feedback, request changes, or approve
 the work. For more information see the Code review guideline.
