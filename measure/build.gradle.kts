@@ -19,7 +19,7 @@ plugins {
 }
 
 group = "com.alliander"
-version = "1.3"
+version = "1.3.0"
 
 repositories {
     mavenCentral()
@@ -44,13 +44,7 @@ kotlin {
 java {
     // We add both the sources and the javadoc jar.
     withSourcesJar()
-//    withJavadocJar()
 }
-
-//// This task is added by Gradle when we use java.withJavadocJar()
-//val javadocJar = tasks.named<Jar>("javadocJar") {
-//    from(tasks.named<DokkaTask>("dokkaHtml"))
-//}
 
 tasks.withType<Test> {
     useJUnitPlatform()
