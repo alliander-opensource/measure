@@ -42,7 +42,7 @@ kotlin {
 }
 
 java {
-    // We add both the sources and the javadoc jar.
+    // Add a task that will package the sources of the main SourceSet in a JAR with classifier `sources`.
     withSourcesJar()
 }
 
@@ -80,6 +80,14 @@ mavenPublishing {
                 id.set("gmulders")
                 name.set("Geert Mulders")
                 email.set("gmulders@gmail.com")
+            }
+            developer {
+                id.set("cflist")
+                name.set("Coen van der List")
+            }
+            developer {
+                id.set("BaukjeD")
+                name.set("Baukje Debets")
             }
         }
         scm {
