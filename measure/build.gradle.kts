@@ -9,8 +9,8 @@ plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
 
-    // Apply dokka plugin to allow extraction of ducumentation from KDoc comments
-    id("org.jetbrains.dokka") version "1.4.20"
+    // Apply dokka plugin to allow extraction of documentation from KDoc comments
+    id("org.jetbrains.dokka") version "1.4.32"
 
     // Make sure we can publish to maven
     `maven-publish`

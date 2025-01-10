@@ -43,7 +43,7 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
     infix fun <A : U> `in`(other: A): BigDecimal =
         if (units == other)
             amount
-        else (amount * units.ratio).divide(other.ratio, amount.scale() + units.ratio.precision(), RoundingMode.UP)
+        else (amount * units.ratio).divide(other.ratio, amount.scale() + other.ratio.precision(), RoundingMode.UP)
 
     operator fun plus(other: Measure<U>): Measure<U> = baseUnits(
         units,
