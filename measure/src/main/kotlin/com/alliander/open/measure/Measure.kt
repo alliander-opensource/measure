@@ -43,7 +43,10 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
     infix fun <A : U> `in`(other: A): BigDecimal =
         if (units == other)
             amount
-        else (amount * units.ratio).divide(other.ratio, amount.scale() + other.ratio.precision(), RoundingMode.UP)
+        else {
+            val result = (amount * units.ratio).divide(other.ratio)
+            result.setScale(amount.precision() - result.precision() + result.scale(), RoundingMode.UP)
+        }
 
     operator fun plus(other: Measure<U>): Measure<U> = baseUnits(
         units,
@@ -121,4 +124,4 @@ data class Measure<U : Units>(val amount: BigDecimal, val units: U) : Comparable
 }
 
 private fun BigDecimal.roundToMultiple(factor: BigDecimal, roundingMode: RoundingMode): BigDecimal =
-        this.divide(factor, 0, roundingMode) * factor
+    this.divide(factor, 0, roundingMode) * factor

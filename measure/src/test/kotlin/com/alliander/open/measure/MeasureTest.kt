@@ -24,6 +24,7 @@ import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNotBe
 import io.kotest.property.checkAll
 import java.math.BigDecimal
+import java.math.RoundingMode.HALF_UP
 import java.math.RoundingMode.UP
 
 class MeasureTest : StringSpec({
@@ -222,6 +223,10 @@ class MeasureTest : StringSpec({
     "Unit conversion uses the correct scale" {
         val energyInJoule = 13500000 * joule
         val valueInKwh = energyInJoule `in` kiloWattHour
-        valueInKwh.stripTrailingZeros() shouldBe BigDecimal.valueOf(3.75)
+        valueInKwh shouldBe BigDecimal.valueOf(3.75).setScale(7)
+
+        val energyInKwh = 3.75 * kiloWattHour
+        val valueInJoule = energyInKwh `in` joule
+        valueInJoule shouldBe BigDecimal.valueOf(1.35E+7)
     }
 })
