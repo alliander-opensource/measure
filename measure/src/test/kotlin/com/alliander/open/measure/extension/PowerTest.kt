@@ -11,12 +11,12 @@ import com.alliander.open.measure.Energy.Companion.megaJoule
 import com.alliander.open.measure.Energy.Companion.megaWattHour
 import com.alliander.open.measure.Measure
 import com.alliander.open.measure.Power
-import com.alliander.open.measure.Power.Companion.kiloVoltAmpereReactive
 import com.alliander.open.measure.Power.Companion.kiloWatt
-import com.alliander.open.measure.Power.Companion.megaVoltAmpereReactive
 import com.alliander.open.measure.Power.Companion.megaWatt
-import com.alliander.open.measure.Power.Companion.voltAmpereReactive
 import com.alliander.open.measure.Power.Companion.watt
+import com.alliander.open.measure.ReactivePower.Companion.kiloVoltAmpereReactive
+import com.alliander.open.measure.ReactivePower.Companion.megaVoltAmpereReactive
+import com.alliander.open.measure.ReactivePower.Companion.voltAmpereReactive
 import com.alliander.open.measure.times
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
