@@ -4,20 +4,17 @@
 
 package com.alliander.open.measure.extension
 
-import com.alliander.open.measure.Energy
+import com.alliander.open.measure.*
 import com.alliander.open.measure.Energy.Companion.joule
 import com.alliander.open.measure.Energy.Companion.kiloJoule
 import com.alliander.open.measure.Energy.Companion.megaJoule
 import com.alliander.open.measure.Energy.Companion.megaWattHour
-import com.alliander.open.measure.Measure
-import com.alliander.open.measure.Power
 import com.alliander.open.measure.Power.Companion.kiloWatt
 import com.alliander.open.measure.Power.Companion.megaWatt
 import com.alliander.open.measure.Power.Companion.watt
 import com.alliander.open.measure.ReactivePower.Companion.kiloVoltAmpereReactive
 import com.alliander.open.measure.ReactivePower.Companion.megaVoltAmpereReactive
 import com.alliander.open.measure.ReactivePower.Companion.voltAmpereReactive
-import com.alliander.open.measure.times
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.matchers.shouldBe
 
@@ -36,6 +33,14 @@ class PowerTest : StringSpec({
         val result = list.sum()
 
         val expectedResult = 3001007 * watt
+        result shouldBe expectedResult
+    }
+
+    "reactivePowerSum returns 0 voltAmpere when given an empty list" {
+        val list = emptyList<Measure<ReactivePower>>()
+        val result = list.sum()
+
+        val expectedResult = 0 * voltAmpereReactive
         result shouldBe expectedResult
     }
 
