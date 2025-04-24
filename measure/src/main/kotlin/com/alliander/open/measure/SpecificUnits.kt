@@ -21,6 +21,9 @@ class Power(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, 
         val watt = Power("W")
         val kiloWatt = Power("kW", 1_000.toBigDecimal())
         val megaWatt = Power("MW", 1_000_000.0.toBigDecimal())
+        val voltAmpereReactive = Power("var")
+        val kiloVoltAmpereReactive = Power("kvar", 1_000.toBigDecimal())
+        val megaVoltAmpereReactive = Power("Mvar", 1_000_000.0.toBigDecimal())
     }
 }
 

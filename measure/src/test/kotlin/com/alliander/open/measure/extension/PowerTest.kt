@@ -11,8 +11,11 @@ import com.alliander.open.measure.Energy.Companion.megaJoule
 import com.alliander.open.measure.Energy.Companion.megaWattHour
 import com.alliander.open.measure.Measure
 import com.alliander.open.measure.Power
+import com.alliander.open.measure.Power.Companion.kiloVoltAmpereReactive
 import com.alliander.open.measure.Power.Companion.kiloWatt
+import com.alliander.open.measure.Power.Companion.megaVoltAmpereReactive
 import com.alliander.open.measure.Power.Companion.megaWatt
+import com.alliander.open.measure.Power.Companion.voltAmpereReactive
 import com.alliander.open.measure.Power.Companion.watt
 import com.alliander.open.measure.times
 import io.kotest.core.spec.style.StringSpec
@@ -33,6 +36,15 @@ class PowerTest : StringSpec({
         val result = list.sum()
 
         val expectedResult = 3001007 * watt
+        result shouldBe expectedResult
+    }
+
+    "powerSum returns correct voltAmpere when given a list of measures of power" {
+        val list = listOf(3 * voltAmpereReactive, 3 * kiloVoltAmpereReactive, 1 * voltAmpereReactive,
+            3 * megaVoltAmpereReactive, 4 * voltAmpereReactive)
+        val result = list.sum()
+
+        val expectedResult = 3003008 * voltAmpereReactive
         result shouldBe expectedResult
     }
 
