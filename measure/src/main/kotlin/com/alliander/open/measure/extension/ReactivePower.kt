@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2024-2025 Alliander N.V.
+//
+// SPDX-License-Identifier: MPL-2.0
+
 package com.alliander.open.measure.extension
 
 import com.alliander.open.measure.Measure
