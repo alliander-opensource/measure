@@ -63,3 +63,4 @@ Please read [SUPPORT](SUPPORT.md) for how to connect and get into contact with t
 [github:create-from-template]: https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/creating-a-repository-from-a-template
 [kotlin]: https://kotlinlang.org/
 [gradle]: https://gradle.org/
+
