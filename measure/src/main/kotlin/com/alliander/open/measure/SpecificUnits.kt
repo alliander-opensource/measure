@@ -26,9 +26,9 @@ class Power(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, 
 
 class ReactivePower(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix, ratio) {
     companion object {
-        val voltAmpereReactive = ReactivePower("VAr")
+        val voltAmpereReactive = ReactivePower("VAr", 1.toBigDecimal())
         val kiloVoltAmpereReactive = ReactivePower("kVAr", 1_000.toBigDecimal())
-        val megaVoltAmpereReactive = ReactivePower("MVAr", 1_000_000.0.toBigDecimal())
+        val megaVoltAmpereReactive = ReactivePower("MVAr", 1_000_000.toBigDecimal())
     }
 }
 
