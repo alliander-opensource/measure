@@ -218,4 +218,18 @@ class MeasureTest : StringSpec({
 
         result shouldBe expectedResult
     }
+
+    "Unit conversion uses the correct scale" {
+        val energyInJoule = 13500000 * joule
+        val valueInKwh = energyInJoule `in` kiloWattHour
+        valueInKwh.stripTrailingZeros() shouldBe BigDecimal.valueOf(3.75)
+
+        val energyInJoule2 = 3.75 * kiloWattHour
+        val valueInKwh2 = energyInJoule2 `in` joule
+        valueInKwh2.stripTrailingZeros() shouldBe BigDecimal.valueOf(1.35E+7)
+
+        val powerInW = 1.99E7 * watt
+        val valueInMw = powerInW `as` megaWatt
+        valueInMw.amount.stripTrailingZeros() shouldBe BigDecimal.valueOf(19.9)
+    }
 })
