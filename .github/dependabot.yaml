@@ -1,0 +1,57 @@
+# SPDX-FileCopyrightText: 2021-2022 Alliander N.V.
+#
+# SPDX-License-Identifier: MPL-2.0
+version: 2
+registries:
+  jfrog:
+    type: maven-repository
+    url: https://alliander.jfrog.io/artifactory/maven-all
+    # secrets provided by Alliander at organisational level
+    username: ${{secrets.JFROG_USER}}
+    password: ${{secrets.JFROG_PASSWORD}}
+updates:
+  # -------- Gradle dependencies --------
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    registries:
+      - jfrog
+    groups:
+      # Group all non-major updates, except gaas-cgp-interfaces
+      all-non-major-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "com.alliander.so:gaas-cgp-interfaces"
+        update-types:
+          - "minor"
+          - "patch"
+      # Keep gaas-cgp-interfaces updates together and separate from others
+      gaas-cgp-interfaces:
+        patterns:
+          - "com.alliander.so:gaas-cgp-interfaces"
+    ignore:
+      # Ignore major updates for Mongo
+      - dependency-name: "org.mongodb:*"
+        update-types:
+          - "version-update:semver-major"
+
+  # -------- Docker / Docker Compose images --------
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      # Mirror the "all non-major" grouping for container images
+      all-non-major-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      # Ignore major image bumps for Mongo
+      - dependency-name: "mongo"
+        update-types:
+          - "version-update:semver-major"
