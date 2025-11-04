@@ -9,6 +9,7 @@ import com.alliander.open.measure.Energy.Companion.kiloJoule
 import com.alliander.open.measure.Energy.Companion.kiloWattHour
 import com.alliander.open.measure.Energy.Companion.megaJoule
 import com.alliander.open.measure.Energy.Companion.megaWattHour
+import com.alliander.open.measure.Energy.Companion.wattHour
 import com.alliander.open.measure.Power.Companion.kiloWatt
 import com.alliander.open.measure.Power.Companion.megaWatt
 import com.alliander.open.measure.Power.Companion.watt
@@ -74,6 +75,15 @@ class MeasureTest : StringSpec({
         val result = value * kiloWattHour
 
         val expectedResult = Measure(BigDecimal.valueOf(value), kiloWattHour)
+        result shouldBe expectedResult
+    }
+
+    "support wattHour" {
+        val value = 3905.07
+
+        val result = value * wattHour
+
+        val expectedResult = Measure(BigDecimal.valueOf(value), wattHour)
         result shouldBe expectedResult
     }
 
