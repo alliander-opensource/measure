@@ -18,9 +18,9 @@ The Technical Steering Committee (TSC) is responsible for:
 4. Raise subjects/issues that are important for the direction/development of this project
 
 The community council consists of the following members:
-1. Product Owner - Daan van Berkel
-2. Lead Developer - Daan van Berkel
-3. Lead Developer - Geert Mulders
+1. Product Owner - Matthijs van Rijswijk
+2. Lead Developer - Baukje Debets
+3. Lead Developer - Shirley Houter
 
 Daan van Berkel from Dynamo will chair the TSC.
 
@@ -36,8 +36,8 @@ Maintainers are responsible for maintaining parts of the code-base. Maintainers 
 6. In case of long discussions or arguments, maintainers or other can request a community council decision.
 
 The current maintainers of this project are:
-1. Daan van Berkel - Dynamo
-2. Geert Mulders - Dynamo
+1. Willem Romijn - Dynamo
+2. Shirley Houter - Dynamo
 
 ## Contributors
 

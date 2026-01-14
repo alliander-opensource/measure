@@ -8,7 +8,7 @@ metadata:
   name: measure
   annotations:
     github.com/project-slug: Alliander/measure
-    alliander.com/product-owner: daan.vanberkel@alliander.com
+    alliander.com/product-owner: matthijs.van.rijswijk@alliander.com
     alliander.com/production-branch: master
 spec:
   type: library

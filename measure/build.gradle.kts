@@ -72,16 +72,6 @@ mavenPublishing {
         }
         developers {
             developer {
-                id.set("dvberkel")
-                name.set("Daan van Berkel")
-                email.set("daan.v.berkel.1980@gmail.com")
-            }
-            developer {
-                id.set("gmulders")
-                name.set("Geert Mulders")
-                email.set("gmulders@gmail.com")
-            }
-            developer {
                 id.set("cflist")
                 name.set("Coen van der List")
             }
