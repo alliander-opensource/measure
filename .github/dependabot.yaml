@@ -17,12 +17,6 @@ updates:
           - "minor"
           - "patch"
 
-    ignore:
-      # Ignore major updates for Mongo
-      - dependency-name: "org.mongodb:*"
-        update-types:
-          - "version-update:semver-major"
-
   # -------- Docker images --------
   - package-ecosystem: "docker"
     directory: "/"
@@ -35,9 +29,3 @@ updates:
         update-types:
           - "minor"
           - "patch"
-
-    ignore:
-      # Ignore major image bumps for Mongo
-      - dependency-name: "mongo"
-        update-types:
-          - "version-update:semver-major"
