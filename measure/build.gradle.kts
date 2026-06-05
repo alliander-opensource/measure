@@ -15,7 +15,7 @@ plugins {
     // Apply dokka plugin to allow extraction of ducumentation from KDoc comments
     id("org.jetbrains.dokka") version "1.9.20"
 
-    id("com.vanniktech.maven.publish") version "0.30.0"
+    id("com.vanniktech.maven.publish") version "0.36.0"
 }
 
 group = "com.alliander"

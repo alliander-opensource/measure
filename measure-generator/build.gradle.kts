@@ -28,14 +28,14 @@ repositories {
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
     implementation("org.apache.velocity:velocity:1.7")
     implementation("com.xenomachina:kotlin-argparser:2.0.7")
 
     testImplementation("io.kotest:kotest-runner-junit5:4.3.2")
     testImplementation("io.kotest:kotest-assertions-core:4.3.2")
     testImplementation("io.kotest:kotest-property:4.3.2")
-    testImplementation("io.mockk:mockk:1.9.3")
+    testImplementation("io.mockk:mockk:1.14.11")
 }
 
 tasks.withType<Test> {
