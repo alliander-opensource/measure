@@ -13,7 +13,7 @@
 plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm")
-    kotlin("plugin.serialization") version "1.5.31"
+    kotlin("plugin.serialization") version "2.4.0"
 
     `application`
 }
