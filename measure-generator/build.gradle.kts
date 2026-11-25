@@ -35,7 +35,7 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:6.2.3")
     testImplementation("io.kotest:kotest-assertions-core:6.2.3")
     testImplementation("io.kotest:kotest-property:6.2.3")
-    testImplementation("io.mockk:mockk:1.9.3")
+    testImplementation("io.mockk:mockk:1.14.12")
 }
 
 tasks.withType<Test> {
