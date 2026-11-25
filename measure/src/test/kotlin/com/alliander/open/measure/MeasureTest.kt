@@ -9,6 +9,7 @@ import com.alliander.open.measure.Energy.Companion.kiloJoule
 import com.alliander.open.measure.Energy.Companion.kiloWattHour
 import com.alliander.open.measure.Energy.Companion.megaJoule
 import com.alliander.open.measure.Energy.Companion.megaWattHour
+import com.alliander.open.measure.Energy.Companion.wattHour
 import com.alliander.open.measure.Power.Companion.kiloWatt
 import com.alliander.open.measure.Power.Companion.megaWatt
 import com.alliander.open.measure.Power.Companion.watt
@@ -74,6 +75,15 @@ class MeasureTest : StringSpec({
         val result = value * kiloWattHour
 
         val expectedResult = Measure(BigDecimal.valueOf(value), kiloWattHour)
+        result shouldBe expectedResult
+    }
+
+    "support wattHour" {
+        val value = 3905.07
+
+        val result = value * wattHour
+
+        val expectedResult = Measure(BigDecimal.valueOf(value), wattHour)
         result shouldBe expectedResult
     }
 
@@ -217,5 +227,19 @@ class MeasureTest : StringSpec({
         val expectedResult = -11 * megaWatt
 
         result shouldBe expectedResult
+    }
+
+    "Unit conversion uses the correct scale" {
+        val energyInJoule = 13500000 * joule
+        val valueInKwh = energyInJoule `in` kiloWattHour
+        valueInKwh.stripTrailingZeros() shouldBe BigDecimal.valueOf(3.75)
+
+        val energyInJoule2 = 3.75 * kiloWattHour
+        val valueInKwh2 = energyInJoule2 `in` joule
+        valueInKwh2.stripTrailingZeros() shouldBe BigDecimal.valueOf(1.35E+7)
+
+        val powerInW = 1.99E7 * watt
+        val valueInMw = powerInW `as` megaWatt
+        valueInMw.amount.stripTrailingZeros() shouldBe BigDecimal.valueOf(19.9)
     }
 })

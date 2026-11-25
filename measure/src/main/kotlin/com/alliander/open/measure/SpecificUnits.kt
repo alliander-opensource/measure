@@ -37,6 +37,7 @@ class Energy(suffix: String, ratio: BigDecimal = BigDecimal.ONE) : Units(suffix,
         val joule = Energy("J", 1.toBigDecimal())
         val kiloJoule = Energy("kJ", 1_000.toBigDecimal())
         val megaJoule = Energy("MJ", 1_000_000.toBigDecimal())
+        val wattHour = Energy("Wh", 3_600.toBigDecimal())
         val kiloWattHour = Energy("kWh", 3_600_000.toBigDecimal())
         val megaWattHour = Energy("mWh", 3_600_000_000.toBigDecimal())
     }
