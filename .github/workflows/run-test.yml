@@ -8,7 +8,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: [self-hosted, X64, Linux, ubuntu-24]
+    runs-on: [ubuntu-latest]
     permissions:
       id-token: write
       contents: read
