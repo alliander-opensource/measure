@@ -70,26 +70,6 @@ mavenPublishing {
                 url.set("https://www.mozilla.org/en-US/MPL/2.0/")
             }
         }
-        developers {
-            developer {
-                id.set("dvberkel")
-                name.set("Daan van Berkel")
-                email.set("daan.v.berkel.1980@gmail.com")
-            }
-            developer {
-                id.set("gmulders")
-                name.set("Geert Mulders")
-                email.set("gmulders@gmail.com")
-            }
-            developer {
-                id.set("cflist")
-                name.set("Coen van der List")
-            }
-            developer {
-                id.set("BaukjeD")
-                name.set("Baukje Debets")
-            }
-        }
         scm {
             url.set("https://github.com/alliander-opensource/measure")
         }

@@ -9,7 +9,6 @@ SPDX-License-Identifier: MPL-2.0
 There are a few ways to connect with the `measure` project:
 
 * Submit an issue
-* Send an email to the Technical Steering Committee: [daan.van.berkel@alliander.com](mailto:daan.van.berkel@alliander.com).
 
 ## How to ask for help, suggest a feature, or give recommendations.
 
@@ -28,7 +27,7 @@ The various issue templates will guide you on making an effective report.
 ## How to report a security vulnerability
 
 If you think you've found a potential vulnerability in this project, please
-email [daan.van.berkel@alliander.com](mailto:daan.van.berkel@alliander.com) to responsibly disclose it.
+email [dynamo.cloud@alliander.com](mailto:dynamo.cloud@alliander.com) to responsibly disclose it.
 
 ## Contributing a fix
 
