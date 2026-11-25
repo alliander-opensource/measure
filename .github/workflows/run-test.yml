@@ -9,6 +9,11 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: [self-hosted, X64, Linux, ubuntu-24]
+    permissions:
+      id-token: write
+      contents: read
+    environment:
+      name: ci
 
     steps:
       - name: checkout
@@ -23,7 +28,6 @@ jobs:
           runtime-version: 17
           build-tool: gradle
           build-tool-version: "9.5.1"
-          use-cache: ${{ inputs.use_cache }}
 
       - name: Run tests (Gradle)
         run: ./gradlew :measure:test
