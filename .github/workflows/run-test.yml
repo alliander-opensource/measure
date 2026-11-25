@@ -7,22 +7,27 @@ name: Run Tests
 on: [push, pull_request]
 
 jobs:
-  gradle:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: [self-hosted, X64, Linux, ubuntu-24]
+    permissions:
+      id-token: write
+      contents: read
+    environment:
+      name: ci
+
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
-    - name: Set up Java
-      uses: actions/setup-java@v3
-      with:
-        distribution: temurin
-        java-version: 17
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
 
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v3
+      - name: Setup runtime
+        uses: Alliander/setup-runtime@04bf359dd49454bfc1d569ba7c6f6263987da22d # v1.3.0
+        with:
+          runtime: java
+          runtime-version: 17
+          build-tool: gradle
+          build-tool-version: "9.5.1"
 
-    - name: Execute Gradle build
-      run: ./gradlew :measure:test
+      - name: Run tests (Gradle)
+        run: ./gradlew :measure:test
