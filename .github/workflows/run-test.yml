@@ -7,11 +7,9 @@ name: Run Tests
 on: [push, pull_request]
 
 jobs:
-  gradle:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: [self-hosted, X64, Linux, ubuntu-24]
+
     steps:
       - name: checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
